@@ -12,7 +12,7 @@ import random
 class objectDetector:
     def __init__(self, model_path, model_type='yolov8', confidence_threshold=0.3, device="cuda:0"):
         """
-        Initialize the object detection model.
+        Initialize the object detection model
         """
         self.detection_model = AutoDetectionModel.from_pretrained(
             model_type=model_type,
