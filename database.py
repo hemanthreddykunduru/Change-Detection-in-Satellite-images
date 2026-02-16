@@ -2,14 +2,19 @@ import psycopg2
 from psycopg2 import Error
 import psycopg2.extras
 import re
+import os
+from dotenv import load_dotenv
 
-# Database configuration
+# Load environment variables from .env file
+load_dotenv()
+
+# Database configuration from environment variables
 DB_CONFIG = {
-    "user": "postgres",
-    "password": "Hemanth@123",
-    "host": "127.0.0.1",
-    "port": "5432",
-    "database": "detection"
+    "user": os.getenv("DB_USER"),
+    "password": os.getenv("DB_PASSWORD"),
+    "host": os.getenv("DB_HOST"),
+    "port": os.getenv("DB_PORT"),
+    "database": os.getenv("DB_NAME")
 }
 
 def sanitize_table_name(filename):

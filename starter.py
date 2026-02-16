@@ -3,12 +3,23 @@ import glob
 from detection import objectDetector
 from database import drop_old_tables, create_table_for_image, save_object_to_table
 from collections import Counter
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 def main():
-    # --- Configuration ---
-    input_folder = r"H:\change detection\cropped"
-    detected_folder=r"H:\change detection"
-    model_path = r"H:\Downloads\ships.v2i.yolo26\yolo26m-obb.pt"
+    # --- Configuration from .env file ---
+    input_folder = os.getenv("INPUT_FOLDER")
+    detected_folder = os.getenv("DETECTED_FOLDER")
+    model_path = os.getenv("MODEL_PATH")
+    model_type = os.getenv("MODEL_TYPE", "yolov8")
+    confidence_threshold = float(os.getenv("CONFIDENCE_THRESHOLD", "0.3"))
+    device = os.getenv("DEVICE", "cuda:0")
+    slice_height = int(os.getenv("SLICE_HEIGHT", "240"))
+    slice_width = int(os.getenv("SLICE_WIDTH", "240"))
+    overlap_height_ratio = float(os.getenv("OVERLAP_HEIGHT_RATIO", "0.2"))
+    overlap_width_ratio = float(os.getenv("OVERLAP_WIDTH_RATIO", "0.2"))
     
     # 0. Drop old database structure (one-time cleanup)
     drop_old_tables()
@@ -25,9 +36,9 @@ def main():
     # --- Initialize Detector ---
     detector = objectDetector(
         model_path=model_path,
-        model_type='yolov8',
-        confidence_threshold=0.3,
-        device="cuda:0"
+        model_type=model_type,
+        confidence_threshold=confidence_threshold,
+        device=device
     )
 
     # --- Batch Process ---
@@ -52,10 +63,10 @@ def main():
             # 1. Run prediction
             result = detector.predict(
                 image_path=image_path,
-                slice_height=240,
-                slice_width=240,
-                overlap_height_ratio=0.2,
-                overlap_width_ratio=0.2
+                slice_height=slice_height,
+                slice_width=slice_width,
+                overlap_height_ratio=overlap_height_ratio,
+                overlap_width_ratio=overlap_width_ratio
             )
             
             # 2. Save full visualization
