@@ -133,7 +133,193 @@ def save_object_to_table(table_name, object_id, object_name, geo_coords, cropped
         if conn is not None:
             conn.close()
 
+def create_change_reports_table():
+    conn = None
+    try:
+        conn = psycopg2.connect(**DB_CONFIG)
+        cur = conn.cursor()
+        
+        create_command = """
+        CREATE TABLE IF NOT EXISTS change_reports (
+            id SERIAL PRIMARY KEY,
+            location_name TEXT NOT NULL,
+            before_image TEXT NOT NULL,
+            after_image TEXT NOT NULL,
+            before_timestamp TIMESTAMP NOT NULL,
+            after_timestamp TIMESTAMP NOT NULL,
+            analysis_timestamp TIMESTAMP NOT NULL,
+            total_slices INTEGER NOT NULL,
+            slices_with_changes INTEGER NOT NULL,
+            construction_detected BOOLEAN NOT NULL,
+            construction_summary TEXT,
+            vehicle_summary TEXT,
+            object_changes_summary TEXT,
+            critical_issues TEXT,
+            detailed_report_path TEXT NOT NULL,
+            overall_status TEXT NOT NULL
+        )
+        """
+        cur.execute(create_command)
+        conn.commit()
+        cur.close()
+        print("Table 'change_reports' created/verified.")
+    except (Exception, Error) as error:
+        print(f"Error creating change_reports table: {error}")
+    finally:
+        if conn is not None:
+            conn.close()
+
+def save_change_report(report_data):
+    conn = None
+    try:
+        conn = psycopg2.connect(**DB_CONFIG)
+        cur = conn.cursor()
+        
+        insert_command = """
+        INSERT INTO change_reports (
+            location_name, before_image, after_image, before_timestamp, after_timestamp,
+            analysis_timestamp, total_slices, slices_with_changes, construction_detected,
+            construction_summary, vehicle_summary, object_changes_summary, critical_issues,
+            detailed_report_path, overall_status
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        RETURNING id
+        """
+        
+        cur.execute(insert_command, (
+            report_data['location_name'],
+            report_data['before_image'],
+            report_data['after_image'],
+            report_data['before_timestamp'],
+            report_data['after_timestamp'],
+            report_data['analysis_timestamp'],
+            report_data['total_slices'],
+            report_data['slices_with_changes'],
+            report_data['construction_detected'],
+            report_data['construction_summary'],
+            report_data['vehicle_summary'],
+            report_data['object_changes_summary'],
+            report_data['critical_issues'],
+            report_data['detailed_report_path'],
+            report_data['overall_status']
+        ))
+        
+        report_id = cur.fetchone()[0]
+        conn.commit()
+        cur.close()
+        print(f"Change report saved to database with ID: {report_id}")
+        return report_id
+    except (Exception, Error) as error:
+        print(f"Error saving change report: {error}")
+        return None
+    finally:
+        if conn is not None:
+            conn.close()
+
+def query_objects_in_bounds(table_name, min_lat, max_lat, min_lon, max_lon):
+    conn = None
+    try:
+        conn = psycopg2.connect(**DB_CONFIG)
+        cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+        
+        query = f"""
+        SELECT * FROM "{table_name}"
+        WHERE centroid_lat BETWEEN %s AND %s
+        AND centroid_lon BETWEEN %s AND %s
+        """
+        
+        cur.execute(query, (min_lat, max_lat, min_lon, max_lon))
+        objects = cur.fetchall()
+        cur.close()
+        return [dict(obj) for obj in objects]
+    except (Exception, Error) as error:
+        print(f"Error querying objects from {table_name}: {error}")
+        return []
+    finally:
+        if conn is not None:
+            conn.close()
+
+def create_change_analysis_table():
+    """Create the change_analysis table for storing per-slice change detection results."""
+    conn = None
+    try:
+        conn = psycopg2.connect(**DB_CONFIG)
+        cur = conn.cursor()
+        
+        create_command = """
+        CREATE TABLE IF NOT EXISTS change_analysis (
+            id SERIAL PRIMARY KEY,
+            location_name TEXT NOT NULL,
+            scan_time_1 TIMESTAMP NOT NULL,
+            scan_time_2 TIMESTAMP NOT NULL,
+            slice_id TEXT NOT NULL,
+            category TEXT NOT NULL,
+            object_name TEXT NOT NULL,
+            change_status TEXT NOT NULL,
+            visual_attributes TEXT,
+            activity_status TEXT,
+            slice_image_1_path TEXT,
+            slice_image_2_path TEXT,
+            latitude REAL,
+            longitude REAL,
+            created_at TIMESTAMP DEFAULT NOW()
+        )
+        """
+        cur.execute(create_command)
+        conn.commit()
+        cur.close()
+        print("Table 'change_analysis' created/verified.")
+    except (Exception, Error) as error:
+        print(f"Error creating change_analysis table: {error}")
+    finally:
+        if conn is not None:
+            conn.close()
+
+def save_change_analysis(record):
+    """Save a single change analysis record to the database."""
+    conn = None
+    try:
+        conn = psycopg2.connect(**DB_CONFIG)
+        cur = conn.cursor()
+        
+        insert_command = """
+        INSERT INTO change_analysis (
+            location_name, scan_time_1, scan_time_2, slice_id, category,
+            object_name, change_status, visual_attributes, activity_status,
+            slice_image_1_path, slice_image_2_path, latitude, longitude
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        RETURNING id
+        """
+        
+        cur.execute(insert_command, (
+            record['location_name'],
+            record['scan_time_1'],
+            record['scan_time_2'],
+            record['slice_id'],
+            record['category'],
+            record['object_name'],
+            record['change_status'],
+            record.get('visual_attributes', ''),
+            record.get('activity_status', ''),
+            record.get('slice_image_1_path', ''),
+            record.get('slice_image_2_path', ''),
+            record.get('latitude'),
+            record.get('longitude')
+        ))
+        
+        record_id = cur.fetchone()[0]
+        conn.commit()
+        cur.close()
+        return record_id
+    except (Exception, Error) as error:
+        print(f"Error saving change analysis record: {error}")
+        return None
+    finally:
+        if conn is not None:
+            conn.close()
+
+
 if __name__ == "__main__":
-    # Test: drop old tables
     drop_old_tables()
+    create_change_reports_table()
+    create_change_analysis_table()
     print("Database restructured. Ready for dynamic table creation with geographic coordinates.")

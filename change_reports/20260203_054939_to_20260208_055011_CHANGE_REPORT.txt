@@ -1,0 +1,305 @@
+CHANGE DETECTION REPORT
+======================================================================
+Location: Mundra Port
+Before: 20260203T054939.tif (2026-02-03 05:49:39)
+After:  20260208T055011.tif (2026-02-08 05:50:11)
+Analysis Time: 2026-02-18 22:57:39.998474
+Slice Size: 240x240 pixels
+Total Slices: 15
+======================================================================
+
+SLICE: R0C0
+----------------------------------------
+  Before Image: slice_images\20260203T054939_to_20260208T055011\before\slice_r0_c0.png
+  After Image:  slice_images\20260203T054939_to_20260208T055011\after\slice_r0_c0.png
+  Center Lat: 22.753401
+  Center Lon: 69.653950
+  Bounds: lat[22.742513, 22.764289] lon[69.642314, 69.665586]
+  DB Objects Before: 0
+  DB Objects After: 0
+  Category: MARITIME|INDUSTRIAL|NO_CHANGE
+  Object: Water body
+  Change Status: STATIONARY
+  Visual Attributes: Image 1 and Image 2 show a shallow, turquoise-colored water body. A narrow sandy beach extends along the coastline. A river or channel flows into the water body from the left, with a darker, murky appearance. The water appears relatively calm with minimal wave action. The overall scene is dominated by the water and the adjacent land.
+  Activity Status: No visible change detected between scans
+
+SLICE: R0C1
+----------------------------------------
+  Before Image: slice_images\20260203T054939_to_20260208T055011\before\slice_r0_c1.png
+  After Image:  slice_images\20260203T054939_to_20260208T055011\after\slice_r0_c1.png
+  Center Lat: 22.753304
+  Center Lon: 69.677325
+  Bounds: lat[22.742414, 22.764193] lon[69.665691, 69.688959]
+  DB Objects Before: 0
+  DB Objects After: 1
+    - plane_1: plane (acc: 37.2%)
+  Category: INDUSTRIAL|INFRASTRUCTURE|MARITIME|NO_CHANGE
+  Object: Storage tanks
+  Change Status: STATIONARY
+  Visual Attributes: Two large storage tanks are visible in both images. A large concrete area surrounds the tanks. Multiple roads and tracks are present, leading to and from the storage tanks. A small body of water is visible in the upper left corner. A single plane is visible in the upper right corner of the AFTER image.
+  Activity Status: No visible change detected between scans
+
+SLICE: R0C2
+----------------------------------------
+  Before Image: slice_images\20260203T054939_to_20260208T055011\before\slice_r0_c2.png
+  After Image:  slice_images\20260203T054939_to_20260208T055011\after\slice_r0_c2.png
+  Center Lat: 22.753203
+  Center Lon: 69.700700
+  Bounds: lat[22.742312, 22.764094] lon[69.689067, 69.712332]
+  DB Objects Before: 7
+    - ship_4: ship (acc: 88.3%)
+    - ship_10: ship (acc: 63.1%)
+    - storage tank_5: storage tank (acc: 60.5%)
+    - storage tank_6: storage tank (acc: 46.6%)
+    - ship_11: ship (acc: 45.8%)
+    - plane_1: plane (acc: 44.7%)
+    - storage tank_7: storage tank (acc: 31.6%)
+  DB Objects After: 16
+    - storage tank_3: storage tank (acc: 81.3%)
+    - storage tank_6: storage tank (acc: 79.0%)
+    - ship_7: ship (acc: 78.6%)
+    - storage tank_7: storage tank (acc: 76.9%)
+    - storage tank_8: storage tank (acc: 76.1%)
+    - storage tank_9: storage tank (acc: 75.1%)
+    - storage tank_10: storage tank (acc: 71.8%)
+    - storage tank_11: storage tank (acc: 71.6%)
+    - storage tank_12: storage tank (acc: 47.0%)
+    - storage tank_13: storage tank (acc: 46.6%)
+    - storage tank_14: storage tank (acc: 44.6%)
+    - ship_16: ship (acc: 41.9%)
+    - storage tank_15: storage tank (acc: 35.3%)
+    - storage tank_16: storage tank (acc: 34.8%)
+    - storage tank_18: storage tank (acc: 34.0%)
+    - storage tank_19: storage tank (acc: 30.1%)
+  Category: INDUSTRIAL|MARITIME|INFRASTRUCTURE|NO_CHANGE
+  Object: Storage tanks and ships
+  Change Status: NO_CHANGE
+  Visual Attributes: Multiple storage tanks are visible in both images, clustered along the shoreline. Several ships are present in both images, docked near the storage tanks. The water body is consistent between the two scans. The overall layout of the industrial area remains unchanged.
+  Activity Status: No visible change detected between scans
+
+SLICE: R0C3
+----------------------------------------
+  Before Image: slice_images\20260203T054939_to_20260208T055011\before\slice_r0_c3.png
+  After Image:  slice_images\20260203T054939_to_20260208T055011\after\slice_r0_c3.png
+  Center Lat: 22.753099
+  Center Lon: 69.724074
+  Bounds: lat[22.742206, 22.763991] lon[69.712444, 69.735704]
+  DB Objects Before: 1
+    - ship_5: ship (acc: 86.0%)
+  DB Objects After: 0
+  Category: MARITIME|NO_CHANGE
+  Object: Water body
+  Change Status: STATIONARY
+  Visual Attributes: Image 1 and Image 2 show a large, relatively calm water body. The water color is a pale greenish-blue. There is a significant landmass to the left with dark green vegetation. A smaller landmass is visible in the upper-right corner with lighter vegetation. The water surface appears relatively smooth with minimal wave action. The overall scene is dominated by the expansive water body.
+  Activity Status: No visible change detected between scans
+
+SLICE: R0C4
+----------------------------------------
+  Before Image: slice_images\20260203T054939_to_20260208T055011\before\slice_r0_c4.png
+  After Image:  slice_images\20260203T054939_to_20260208T055011\after\slice_r0_c4.png
+  Center Lat: 22.753029
+  Center Lon: 69.739366
+  Bounds: lat[22.742173, 22.763885] lon[69.735821, 69.742911]
+  DB Objects Before: 0
+  DB Objects After: 0
+  Category: MARITIME|NO_CHANGE
+  Object: Water body
+  Change Status: STATIONARY
+  Visual Attributes: Image 1 and Image 2 show a dark gray/black water body filling the majority of the frame. The water appears calm with minimal wave action. The water surface reflects the sky, creating a slightly brighter appearance in areas. The water body extends to the edges of the image.
+  Activity Status: No visible change detected between scans
+
+SLICE: R1C0
+----------------------------------------
+  Before Image: slice_images\20260203T054939_to_20260208T055011\before\slice_r1_c0.png
+  After Image:  slice_images\20260203T054939_to_20260208T055011\after\slice_r1_c0.png
+  Center Lat: 22.731722
+  Center Lon: 69.653846
+  Bounds: lat[22.720834, 22.742609] lon[69.642212, 69.665481]
+  DB Objects Before: 1
+    - harbor_2: harbor (acc: 58.2%)
+  DB Objects After: 1
+    - ship_18: ship (acc: 33.1%)
+  Category: MARITIME|INDUSTRIAL|NO_CHANGE
+  Object: Ships
+  Change Status: MOVED
+  Visual Attributes: In both images, a single ship is visible in the lower right corner of the frame. The ship appears to be docked near the harbor. The water is a light teal color in both images. The harbor area with the docks and buildings is visible in both images.
+  Activity Status: The ship has moved from the lower right corner of the BEFORE image to the lower right corner of the AFTER image.
+
+SLICE: R1C1
+----------------------------------------
+  Before Image: slice_images\20260203T054939_to_20260208T055011\before\slice_r1_c1.png
+  After Image:  slice_images\20260203T054939_to_20260208T055011\after\slice_r1_c1.png
+  Center Lat: 22.731624
+  Center Lon: 69.677218
+  Bounds: lat[22.720735, 22.742513] lon[69.665586, 69.688850]
+  DB Objects Before: 6
+    - storage tank_1: storage tank (acc: 93.1%)
+    - ship_2: ship (acc: 91.6%)
+    - storage tank_3: storage tank (acc: 89.5%)
+    - ship_7: ship (acc: 77.5%)
+    - harbor_1: harbor (acc: 61.5%)
+    - ship_12: ship (acc: 45.4%)
+  DB Objects After: 8
+    - ship_2: ship (acc: 91.7%)
+    - storage tank_1: storage tank (acc: 91.2%)
+    - storage tank_2: storage tank (acc: 88.0%)
+    - harbor_1: harbor (acc: 85.6%)
+    - harbor_2: harbor (acc: 64.8%)
+    - ship_11: ship (acc: 62.3%)
+    - ship_14: ship (acc: 53.7%)
+    - ship_17: ship (acc: 33.7%)
+  Category: MARITIME|INDUSTRIAL|INFRASTRUCTURE|NO_CHANGE
+  Object: Ships and Storage Tanks
+  Change Status: STATIONARY
+  Visual Attributes: Two images show a large area with a body of water. Several ships are present in both images, docked at a harbor. Multiple storage tanks are visible, some near the harbor and others further inland. The harbor area appears relatively stable with docks and piers. The overall scene is dominated by maritime activity and industrial infrastructure.
+  Activity Status: No visible change detected between scans
+
+SLICE: R1C2
+----------------------------------------
+  Before Image: slice_images\20260203T054939_to_20260208T055011\before\slice_r1_c2.png
+  After Image:  slice_images\20260203T054939_to_20260208T055011\after\slice_r1_c2.png
+  Center Lat: 22.731523
+  Center Lon: 69.700589
+  Bounds: lat[22.720633, 22.742414] lon[69.688959, 69.712219]
+  DB Objects Before: 7
+    - ship_1: ship (acc: 94.0%)
+    - storage tank_2: storage tank (acc: 91.3%)
+    - ship_6: ship (acc: 80.7%)
+    - storage tank_4: storage tank (acc: 76.1%)
+    - ship_8: ship (acc: 71.2%)
+    - ship_9: ship (acc: 65.1%)
+    - ship_13: ship (acc: 43.8%)
+  DB Objects After: 12
+    - ship_1: ship (acc: 93.2%)
+    - ship_5: ship (acc: 84.6%)
+    - ship_6: ship (acc: 81.3%)
+    - storage tank_4: storage tank (acc: 80.5%)
+    - storage tank_5: storage tank (acc: 79.0%)
+    - ship_8: ship (acc: 75.6%)
+    - ship_9: ship (acc: 72.1%)
+    - ship_10: ship (acc: 62.5%)
+    - ship_12: ship (acc: 59.9%)
+    - ship_13: ship (acc: 54.0%)
+    - ship_15: ship (acc: 49.0%)
+    - storage tank_17: storage tank (acc: 34.0%)
+  Category: MARITIME|INDUSTRIAL|INFRASTRUCTURE|NO_CHANGE
+  Object: Dock area
+  Change Status: NO_CHANGE
+  Visual Attributes: The image shows a large dock area with several ships present. There is a storage tank visible on the dock. The water is a light blue color. The surrounding area is mostly urban with buildings and roads. The dock area appears relatively static between the two scans.
+  Activity Status: No visible change detected between scans
+
+SLICE: R1C3
+----------------------------------------
+  Before Image: slice_images\20260203T054939_to_20260208T055011\before\slice_r1_c3.png
+  After Image:  slice_images\20260203T054939_to_20260208T055011\after\slice_r1_c3.png
+  Center Lat: 22.731419
+  Center Lon: 69.723960
+  Bounds: lat[22.720527, 22.742312] lon[69.712332, 69.735589]
+  DB Objects Before: 1
+    - ship_14: ship (acc: 33.3%)
+  DB Objects After: 2
+    - ship_3: ship (acc: 89.4%)
+    - ship_4: ship (acc: 84.9%)
+  Category: MARITIME|INDUSTRIAL|NO_CHANGE
+  Object: Ships
+  Change Status: MOVED
+  Visual Attributes: In both images, there are two ships present in the water body. Image 1 shows one ship, and Image 2 shows two ships. The ships are located near the dock area. The water body is a light teal color.
+  Activity Status: Ships have moved from the location in Image 1 to the location in Image 2.
+
+SLICE: R1C4
+----------------------------------------
+  Before Image: slice_images\20260203T054939_to_20260208T055011\before\slice_r1_c4.png
+  After Image:  slice_images\20260203T054939_to_20260208T055011\after\slice_r1_c4.png
+  Center Lat: 22.731350
+  Center Lon: 69.739249
+  Bounds: lat[22.720493, 22.742206] lon[69.735704, 69.742794]
+  DB Objects Before: 0
+  DB Objects After: 0
+  Category: MARITIME|INDUSTRIAL|NO_CHANGE
+  Object: Water body
+  Change Status: STATIONARY
+  Visual Attributes: Image 1 and Image 2 show a dark gray water body filling the entire frame. The water surface appears calm with no visible waves or reflections. The water body occupies the entire visible area.
+  Activity Status: No visible change detected between scans
+
+SLICE: R2C0
+----------------------------------------
+  Before Image: slice_images\20260203T054939_to_20260208T055011\before\slice_r2_c0.png
+  After Image:  slice_images\20260203T054939_to_20260208T055011\after\slice_r2_c0.png
+  Center Lat: 22.714559
+  Center Lon: 69.653765
+  Bounds: lat[22.708188, 22.720929] lon[69.642111, 69.665420]
+  DB Objects Before: 0
+  DB Objects After: 0
+  Category: NO_CHANGE
+  Object: Open land
+  Change Status: NO_CHANGE
+  Visual Attributes: The image shows a dark gray/black horizon line. Above the horizon line, there is a pale gray sky with a very faint, light teal-colored cloud layer. The cloud layer appears thin and diffuse, providing a subtle gradient from light gray to teal. The overall scene is flat and featureless.
+  Activity Status: NO_CHANGE
+
+SLICE: R2C1
+----------------------------------------
+  Before Image: slice_images\20260203T054939_to_20260208T055011\before\slice_r2_c1.png
+  After Image:  slice_images\20260203T054939_to_20260208T055011\after\slice_r2_c1.png
+  Center Lat: 22.714461
+  Center Lon: 69.677134
+  Bounds: lat[22.708089, 22.720834] lon[69.665481, 69.688787]
+  DB Objects Before: 0
+  DB Objects After: 0
+  Category: NO_CHANGE
+  Object: Open land
+  Change Status: NO_CHANGE
+  Visual Attributes: Image 1 and Image 2 show a flat, dark gray/black horizon line. Above the horizon line, there is a gradient of light gray to pale teal sky. The sky appears cloudy with subtle, diffuse cloud formations. The overall scene is uniform and lacks distinct features.
+  Activity Status: No visible change detected between scans
+
+SLICE: R2C2
+----------------------------------------
+  Before Image: slice_images\20260203T054939_to_20260208T055011\before\slice_r2_c2.png
+  After Image:  slice_images\20260203T054939_to_20260208T055011\after\slice_r2_c2.png
+  Center Lat: 22.714361
+  Center Lon: 69.700502
+  Bounds: lat[22.707986, 22.720735] lon[69.688850, 69.712154]
+  DB Objects Before: 1
+    - ship_3: ship (acc: 90.9%)
+  DB Objects After: 0
+  Category: MARITIME|NO_CHANGE
+  Object: Aircraft
+  Change Status: STATIONARY
+  Visual Attributes: In both images, a single aircraft is visible in the sky. The aircraft appears blurry and indistinct due to atmospheric conditions and distance. The aircraft is positioned approximately in the center of the frame, with a dark, featureless background. The aircraft appears to be stationary.
+  Activity Status: No visible change detected between scans
+
+SLICE: R2C3
+----------------------------------------
+  Before Image: slice_images\20260203T054939_to_20260208T055011\before\slice_r2_c3.png
+  After Image:  slice_images\20260203T054939_to_20260208T055011\after\slice_r2_c3.png
+  Center Lat: 22.714257
+  Center Lon: 69.723870
+  Bounds: lat[22.707881, 22.720633] lon[69.712219, 69.735521]
+  DB Objects Before: 0
+  DB Objects After: 0
+  Category: NO_CHANGE
+  Object: Open land
+  Change Status: NO_CHANGE
+  Visual Attributes: The image shows a gradient from a light gray to a darker gray, representing a flat, open land surface. The color is consistent across both images. There are no visible features or objects present.
+  Activity Status: No visible change detected between scans
+
+SLICE: R2C4
+----------------------------------------
+  Before Image: slice_images\20260203T054939_to_20260208T055011\before\slice_r2_c4.png
+  After Image:  slice_images\20260203T054939_to_20260208T055011\after\slice_r2_c4.png
+  Center Lat: 22.714187
+  Center Lon: 69.739157
+  Bounds: lat[22.707847, 22.720527] lon[69.735589, 69.742726]
+  DB Objects Before: 0
+  DB Objects After: 0
+  Category: INFRASTRUCTURE|MARITIME|INDUSTRIAL|NO_CHANGE
+  Object: Water body
+  Change Status: STATIONARY
+  Visual Attributes: A large, calm water body dominates the image. The water appears relatively still with a slight sheen. The color is consistent across both images, appearing as a muted teal. There are no visible boats or ships.
+  Activity Status: No visible change detected between scans
+
+======================================================================
+SUMMARY
+======================================================================
+Total slices analyzed: 15
+Total DB records created: 15
+Report generated at: 2026-02-18 23:00:50.929749
